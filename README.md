@@ -31,9 +31,11 @@
 
 </div>
 
+![Honeycomb overview: first-frame initialization, memory-conditioned generation, and recurrent HexMemory updates.](assets/overview.png)
+
 We introduce Honeycomb, a video world model built on HexMemory, our proposed low-rank representation for storing scene features in a fixed-size memory with a total of six spatial and spatiotemporal planes.
 
-To prepare data and train the model, follow the numbered sections: prepare clips → train the writer → build the memory-conditioned dataset → train stages 1 and 2. If you already have trained checkpoints and a prepared input clip, go to [Inference](#inference).
+To prepare data and train the model, follow the numbered sections: prepare clips → train the writer → build the memory-conditioned dataset → train stages 1 and 2. After obtaining the trained checkpoints and a prepared input clip, go to [Inference](#inference).
 
 ## Code layout
 
@@ -205,4 +207,4 @@ The finished video is saved to `runs/inference/videos/generated.mp4`. The same o
 
 ## Acknowledgements and license
 
-This implementation builds on Latent Spatial Memory, Spatia, and Wan. See [LICENSE](LICENSE) for the repository license.
+This implementation builds on Latent Spatial Memory, Spatia, Wan, and HexPlane. See [LICENSE](LICENSE) for the repository license.
