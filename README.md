@@ -4,7 +4,7 @@
 
   <p>
     <b>Jack Wei Lun Shi</b><sup>2,*</sup> &nbsp;
-    <b>Kaichen Zhou</b><sup>1,3,*</sup><br/>
+    <b>Kaichen Zhou</b><sup>1,3,*,†</sup><br/>
     <b>Haoyu Chen</b><sup>1</sup> &nbsp;
     <b>Yufeng Weng</b><sup>2</sup> &nbsp;
     <b>Keane Ong</b><sup>2,3</sup> &nbsp;
@@ -21,7 +21,7 @@
     <sup>4</sup>MIT-IBM Watson AI Lab
   </p>
 
-  <p><sup>*</sup>Equal contribution.</p>
+  <p><sup>*</sup>Equal contribution. &nbsp;&nbsp; <sup>†</sup>Project lead.</p>
 
   <p>
     <a href="https://arxiv.org/pdf/2609.37690"><img src="https://img.shields.io/badge/Paper-arXiv-F4B8B0?labelColor=FDE6E2" width="98" alt="arXiv" /></a>
