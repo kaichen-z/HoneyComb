@@ -127,6 +127,9 @@ class HexMemory:
                 .contiguous(),
             }
             self._inc_write(chunk, init_bounds=bounds)
+            self._lpc.features = None
+            self._write_dirs = None
+            self._write_centers = None
         else:
             self._regenerate_field(init_bounds=bounds)
         self._written = [t0]
@@ -252,7 +255,8 @@ class HexMemory:
             return
         for t, pts, feats, dirs, center in appended:
             self._lpc.points_world = torch.cat([self._lpc.points_world, pts])
-            self._lpc.features = torch.cat([self._lpc.features, feats])
+            if self._inc is None:
+                self._lpc.features = torch.cat([self._lpc.features, feats])
             self._lpc.valid_mask = torch.cat(
                 [
                     self._lpc.valid_mask.bool(),
@@ -260,10 +264,11 @@ class HexMemory:
                 ]
             )
             self._tau = torch.cat([self._tau, torch.full((pts.shape[0],), float(t))])
-            self._write_dirs = torch.cat([self._write_dirs, dirs])
-            self._write_centers = torch.cat(
-                [self._write_centers, center.reshape(1, 3).repeat(pts.shape[0], 1)]
-            )
+            if self._inc is None:
+                self._write_dirs = torch.cat([self._write_dirs, dirs])
+                self._write_centers = torch.cat(
+                    [self._write_centers, center.reshape(1, 3).repeat(pts.shape[0], 1)]
+                )
         written_times = sorted((t for t, *_ in appended))
         if self._inc is not None:
             old_bounds = self._inc_state.frame.bounds
